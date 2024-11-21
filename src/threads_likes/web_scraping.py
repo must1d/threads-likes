@@ -7,8 +7,8 @@ from threads_likes.helpers import retry
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-_LIKES_BOX = ("html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[2]"
-              "/div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]")
+_LIKES_BOX = ("html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[2]/"
+              "div/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]")
 
 
 def save_cookies(driver: webdriver.Chrome, cookies_file: Path) -> None:

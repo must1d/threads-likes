@@ -1,6 +1,6 @@
 import json
 
-from src.threads_likes import DATA_PATH
+from threads_likes import DATA_PATH
 
 DATA_FILE = DATA_PATH / "likes_data.json"
 
