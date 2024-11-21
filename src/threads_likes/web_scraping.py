@@ -27,7 +27,7 @@ def get_all_threads_of_user(driver: webdriver.Chrome, username: str) -> list[str
     driver.get(f"https://www.threads.net/{username}")
 
     thread_urls = []
-    scroll_pause_time = 3
+    scroll_pause_time = 2
     last_height = driver.execute_script("return document.body.scrollHeight")
 
     while True:
