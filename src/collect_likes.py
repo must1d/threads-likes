@@ -11,7 +11,7 @@ from threads_likes.web_scraping import (
     get_likes_per_thread
 )
 
-from src.threads_likes import COOKIES_PATH, DATA_PATH
+from threads_likes import COOKIES_PATH, DATA_PATH
 
 COOKIES_FILE = COOKIES_PATH / "session_cookies.json"
 DATA_FILE = DATA_PATH / "likes_data.json"

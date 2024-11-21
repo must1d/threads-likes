@@ -2,7 +2,7 @@ import json
 import time
 from pathlib import Path
 
-from helpers import retry
+from threads_likes.helpers import retry
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
