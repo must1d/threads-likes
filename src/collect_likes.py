@@ -1,3 +1,4 @@
+import argparse
 import json
 
 from selenium import webdriver
@@ -16,9 +17,17 @@ from threads_likes import COOKIES_PATH, DATA_PATH
 COOKIES_FILE = COOKIES_PATH / "session_cookies.json"
 DATA_FILE = DATA_PATH / "likes_data.json"
 
-USERNAME = "USERNAME"
-
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "-u",
+        type=str,
+        help="Username"
+    )
+
+    args = parser.parse_args()
+
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
     driver = webdriver.Chrome(options=options)
@@ -32,7 +41,7 @@ if __name__ == "__main__":
         input("Please log in to Threads in the opened browser. Press Enter after completing the login process.")
         save_cookies(driver, COOKIES_FILE)
 
-    thread_urls = get_all_threads_of_user(driver=driver, username=USERNAME)
+    thread_urls = get_all_threads_of_user(driver=driver, username=args.u)
 
     result_data = {}
 
@@ -41,7 +50,7 @@ if __name__ == "__main__":
             likes = get_likes_per_thread(
                 thread_url=thread_url,
                 driver=driver,
-                username=USERNAME,
+                username=args.u,
             )
             if len(likes) < 100:
                 print(likes)
