@@ -49,7 +49,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"{thread_url} at index {i} failed due to {e}")
 
-    with open(DATA_FILE, "w") as f:
+    with DATA_FILE.open("w") as f:
         json.dump(result_data, f, indent=4)
 
     driver.quit()
